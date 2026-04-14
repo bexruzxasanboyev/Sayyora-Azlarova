@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olmaliq Qurilish</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            background-color: #005767;
+            color: #FFF
+        }
+
+        .hero {
+            padding-top: clamp(12px, 4.8vw, 19px);
+            padding-bottom: clamp(22px, 10vw, 40px)
+        }
+
+        .hero__container {
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            flex-direction: column
+        }
+
+        .hero__top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(12px, 5vw, 24px);
+            margin-bottom: clamp(14px, 5.4vw, 21px)
+        }
+
+        .hero__top-item {
+            display: flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        .hero__top-item img {
+            width: clamp(16px, 4.5vw, 20px);
+            height: clamp(16px, 4.5vw, 20px)
+        }
+
+        .hero__top-item p {
+            font-family: Inter, sans-serif;
+            font-weight: 400;
+            font-size: clamp(14px, 4vw, 16px);
+            line-height: 100%;
+            color: #FFF
+        }
+
+        .hero__title {
+            font-family: Montserrat, sans-serif;
+            font-weight: 800;
+            font-size: clamp(27px, 8vw, 32px);
+            line-height: 130%;
+            letter-spacing: -2%;
+            text-transform: uppercase;
+            margin-bottom: 13px;
+            color: white;
+        }
+
+        .hero__title span {
+            color: #FFE59D
+        }
+
+        .hero__content {
+            position: relative;
+            isolation: isolate;
+            min-height: clamp(340px, 96vw, 365px);
+            margin-bottom: clamp(12px, 4.5vw, 18px);
+        }
+
+        .hero__media {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            width: clamp(185px, 58vw, 265px);
+            height: 100%;
+            overflow: hidden
+        }
+
+        .hero__media::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 15%;
+            pointer-events: none;
+            z-index: 5;
+            background: linear-gradient(270deg, #005767 0%, #fff0 100%)
+        }
+
+        .hero__bg {
+            position: absolute;
+            top: 30px;
+            left: 80px;
+            width: 100%;
+            max-width: 365px;
+            width: 100%;
+            height: 365px;
+            border-radius: 100%;
+            background: linear-gradient(196.22deg, #FFD769 14.44%, #FFFFFF 63.12%);
+        }
+
+        .hero__speaker {
+            position: absolute;
+            width: 100%;
+            top: 20px;
+            right: -80px;
+            height: auto;
+            display: block;
+            z-index: 12;
+            max-width: clamp(170px, 56vw, 282px)
+        }
+
+        .hero__gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradiexnt(90deg, #000000 0%, #000000 30%, rgb(0 0 0 / .7) 50%, #fff0 85%);
+            z-index: 3;
+            pointer-events: none;
+            width: 0
+        }
+
+        .hero__fade {
+            position: absolute;
+            bottom: 20px;
+            left: 200px;
+            
+            background: linear-gradient(180deg, rgba(0, 87, 103, 0) 7.69%, #005767 48.56%);
+            z-index: 4;
+            max-width: 390px;
+            width: 100%;
+            height: 114px;
+        }
+
+        .hero__left {
+            position: relative;
+            z-index: 5;
+            padding-top: clamp(8px, 3.5vw, 14px)
+        }
+
+        .hero__offer {
+            max-width: clamp(180px, 57vw, 260px);
+            width: 100%;
+            background: linear-gradient(270deg, #FECC63 3.64%, #FFE7B9 60%, #FED48C 100%);
+            border-radius: 7px;
+            padding: clamp(6px, 2vw, 8px) clamp(10px, 3.5vw, 14px);
+            margin-bottom: 9px;
+        }
+
+        .hero__offer p {
+            font-family: Montserrat, sans-serif;
+            font-weight: 600;
+            font-size: clamp(12px, 3.6vw, 16px);
+            line-height: 20px;
+            color: #000
+        }
+
+        .hero__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(4px, 1.5vw, 6px);
+            max-width: clamp(195px, 62vw, 245px);
+            margin-bottom: clamp(14px, 5.6vw, 22px)
+        }
+
+        .hero__list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 4px
+        }
+
+        .hero__list-item img {
+            width: 13px;
+            height: 11px;
+            object-fit: cover;
+            flex-shrink: 0;
+            margin-top: 1px
+        }
+
+        .hero__list-title {
+            font-family: Poppins, sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 130%;
+            color: #BABABA;
+            margin-bottom: 3px;
+            margin-left: 15px;
+        }
+
+        .hero__list-item p {
+            font-family: Montserrat, sans-serif;
+            font-weight: 600;
+            font-size: clamp(11px, 3.5vw, 16px);
+            line-height: 130%;
+            color: #FFF
+        }
+
+        .timer {
+            font-family: Montserrat, sans-serif;
+            font-weight: 700;
+            font-size: clamp(22px, 7.6vw, 34px);
+            line-height: 120%;
+            color: #FFF;
+            margin-left: 25px;
+            margin-top: clamp(4px, 1.6vw, 6px);
+        }
+
+        .hero__btn-wrap {
+            position: relative;
+            width: 100%;
+            margin: -46px auto 0;
+            padding: 0 20px
+        }
+
+        .hero__btn {
+            background:
+                linear-gradient(270deg, #FECC63 3.64%, #FFE7B9 40.8%, #FED48C 91.15%);
+            max-width: 359px;
+            height: 88px;
+            width: 100%;
+            box-shadow: 0px 4px 9.6px 1px #FFFFFF40, -2px -4px 0px 0px #00000040 inset;
+            font-family: Inter, sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 100%;
+            text-align: center;
+            text-transform: uppercase;
+            color: #005767;
+            padding: 29px 0 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 44px;
+        }
+
+        .hero__hint {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(4px, 2vw, 8px);
+            position: relative
+        }
+
+        .hero__hint p {
+            font-family: "Helvetica Neue", Helvetica, sans-serif;
+            font-weight: 400;
+            font-size: clamp(12px, 3.8vw, 16px);
+            line-height: 100%;
+            color: #FFF
+        }
+
+        .hero__hint img {
+            width: clamp(52px, 18vw, 47px);
+            height: auto
+        }
+
+        @media (max-width:360px) {
+            .hero__title {
+                letter-spacing: -.3px
+            }
+
+            .hero__top-item p {
+                font-size: 13px
+            }
+        }
+
+        .bonus {
+            max-width: 331px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            justify-content: center;
+            gap: 8px;
+            margin-left: 30px;
+            padding: 10px 6px;
+            background-color: white;
+            border: 1px solid #FFAA00;
+            border-radius: 11px
+        }
+
+        .bonus__img {
+            display: flex;
+            width: 56px;
+            height: auto
+        }
+
+        .bonus__text {
+            font-weight: 500;
+            font-family: "Helvetica Neue", sans-serif;
+            line-height: 150%;
+            color: #000;
+            font-size: clamp(12px, 3.5vw, 16px)
+        }
+    </style>
+    <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="./css/main.css">
+    </noscript>
+</head>
+
+<body>
+    <main>
+        <section class="hero">
+            <div class="hero__container">
+                <div class="hero__top">
+                    <div class="hero__top-item">
+                        <img loading="lazy" decoding="async" src="./images/calendar.png" width="20" height="20"
+                            alt="calendar">
+                        <p>23-24-Aprel</p>
+                    </div>
+                    <div class="hero__top-item">
+                        <img loading="lazy" decoding="async" src="./images/clock.png" width="16" height="16"
+                            alt="clock">
+                        <p>Soat: 20:00</p>
+                    </div>
+                </div>
+                <h1 class="hero__title">Mag'lub insondan <br> <span>g'olib insonga <br> o'tish</span> texnikalari</h1>
+                <div class="hero__content">
+                    <div class="hero__media">
+                        <img class="hero__bg" src="./images/bg.avif" width="265" height="422" loading="lazy"
+                            decoding="async" alt="bg">
+                        <img class="hero__speaker" src="./images/speaker.avif" width="282" height="352" loading="lazy"
+                            decoding="async" alt="speaker">
+                        <div class="hero__fade"></div>
+                    </div>
+                    <div class="hero__gradient"></div>
+                    <div class="hero__left">
+                        <div class="hero__offer">
+                            <p>2 kunlik BEPUL darsimda <br>
+                                baxtli yashashni o‘rgataman</p>
+                        </div>
+                        <ul class="hero__list">
+                            <h2 class="hero__list-title">Ushbu darsda siz:</h2>
+                            <li class="hero__list-item">
+                                <img loading="lazy" decoding="async" src="./images/stars.png" width="13" height="11"
+                                    alt="verify">
+                                <p>Er-xotin munosabatlari- <br>
+                                    dagi ssenariylar</p>
+                            </li>
+                            <li class="hero__list-item">
+                                <img loading="lazy" decoding="async" src="./images/stars.png" width="13" height="11"
+                                    alt="verify">
+                                <p>Bolalikdagi travmalarni <br>
+                                    yengish </p>
+                            </li>
+                            <li class="hero__list-item">
+                                <img loading="lazy" decoding="async" src="./images/stars.png" width="13" height="11"
+                                    alt="verify">
+                                <p>Mag‘lub insondan g‘olib <br>
+                                    insonga o‘tish texnikalari</p>
+                            </li>
+                        </ul>
+                        <div class="timer">02:00</div>
+                    </div>
+                </div>
+                <div class="hero__btn-wrap">
+                    <button class="hero__btn webinar-cta">BEPUL QATNASHISH</button>
+                </div>
+                <div class="hero__hint">
+                    <img loading="lazy" decoding="async" src="./images/arrow.png" width="47" height="47" alt="arrow">
+                    <p>Bepul qatnashish uchun bosing</p>
+                </div>
+                <div style="padding: 0 10px; max-width: 331px; width: 100%;">
+                    <div class="bonus">
+                        <img class="bonus__img" src="./images/info.png" alt="bonus" loading="lazy" decoding="async"
+                            width="55" height="56">
+                        <p class="bonus__text"><b>Eng muhumi</b> - o’zim 10 yildan <br> beri ishlatib kelayotkan hayotiy
+                            <br> texnikalar haqida gaplashamiz
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
