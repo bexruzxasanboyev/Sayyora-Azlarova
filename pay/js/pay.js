@@ -140,9 +140,9 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 // 1) ONE place to edit tariffs + prices
 const TARIFFS = {
-    "STANDART": { uzs: 1997000, label: "1 997 000 SO'M" },
-    "PREMIUM": { uzs: 2497000, label: "2 497 000 SO'M" },
-    "VIP": { uzs: 3497000, label: "3 497 000 SO'M" },
+    "STANDART": { uzs: 1297000, label: "1 297 000 SO'M" },
+    "PREMIUM": { uzs: 1497000, label: "1 497 000 SO'M" },
+    "VIP": { uzs: 2297000, label: "2 297 000 SO'M" },
 };
 
 
